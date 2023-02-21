@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohaid Protfolio</title>
+  <link rel="preload" href="/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="preloader" id="preloader">
+    <svg viewBox="0 0 1920 1080" preserveAspectRatio="none" version="1.1">
+      <defs>
+        <linearGradient id="preloader-gradient" x2="0" y2="100%">
+          <stop class="stop" offset="0%" stop-color="var(--primary-color)" />
+          <stop class="stop" offset="100%" stop-color="var(--secondary-color)" />
+        </linearGradient>
+      </defs>
+      <path id="path"
+        d="M-8.203,1.077C289.445,-4.075,627.253,0,960,0,1294.666,0,1645.001,-0.088,1925.47,0.943,1925.47,260.93,1925.471,831.066,1925.471,1091.1,1589.069,1089.148,1243.145,1090.658,908.481,1090.658,569.971,1089.43,318.176,1093.758,-6.827,1092.873,-6.827,809.521,-9.788,287.625,-13.16,0.923">
+      </path>
+    </svg>
+    <div class="inner">
+      <canvas class="progress-bar" id="progress-bar" width="200" height="200"></canvas>
+      <figure><img src="images/preloader.png" alt="Image"></figure>
+      <small>Loading</small>
+    </div>
+  </div>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a class="navbar-brand"><strong>{ }</strong> by Rohaid</a>
+        <ul class="navbar-nav" data-cursor="-opaque">
+          <li class="nav-item">
+            <a class="text-hover" href="https://twitter.com/RohaidAl" target="_blank">twitter</a>
+          </li>
+          <li class="nav-item">
+            <a class="text-hover" href="https://codepen.io/rohaidAli" target="_blank">codepen</a>
+          </li>
+          <li class="nav-item">
+            <a class="text-hover" href="https://www.linkedin.com/in/rohaid-khan-3a49a5149/" target="_blank">linkedin</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bannerSec" data-color="dark">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="flex-col">
+          <h2>Hi, I am <span>Rohaid Ali Khan</span></h2>
+          <h3>Creative Frontend Developer</h3>
+          <a href="#" class="theme-btn" data-magnetic data-strength="50" data-strength-text="20">
+            <span class="btn-bg">
+              <span class="btn-bg-layers">
+                <span class="btn-bg-layer btn-bg-layer-1 "></span>
+                <span class="btn-bg-layer btn-bg-layer-2 "></span>
+                <span class="btn-bg-layer btn-bg-layer-3 "></span>
+              </span>
+            </span>
+            <span class="btn-text">
+              <span class="btn-text-inner">
+                contact me
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-across">
+      <h1><span class="gradient-2">Creative</span> Developer</h1>
+    </div>
+    <div class="scrollTo">Scroll To Exolore
+      <div class="mouse-wheel">
+        <div class="mouse"></div>
+      </div>
+    </div>
+  </section>
+  <section class="aboutSec" data-color="dark">
+    <div class="container">
+      <div class="row">
+        <div class="flex-col">
+          <div class="section-heading">
+            <h3>about me</h2>
+          </div>
+          <div class="splitLines" data-cursor="-hidden">
+            <h2>Innovative, imaginative, and always pushing the envelope - that's me, a creative
+              developer with a passion for bringing ideas to life. Whether it's revamping a
+              website,
+              or creating a stunning one, I have the skills and vision to make it happen. Let's
+              work
+              together and make your project truly shine.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="workSec" data-color="dark">
+    <div class="container">
+      <div class="section-heading">
+        <h3>Recent work</h3>
+      </div>
+      <div class="row">
+        <div class="flex-col">
+          <div class="workBox" data-cursor="-exclusion" data-cursor-video="/videos/1.mp4">
+            <a href="https://pacificlogodesign.com" target="_blank">Pacific Logo Designs</a>
+            <p>interaction & development</p>
+          </div>
+          <div class="workBox" data-cursor="-exclusion" data-cursor-video="/videos/2.mp4">
+            <a href="https://testv22.demowebsitelinks.com/celebrant/" target="_blank">Celebrant</a>
+            <p>interaction & development</p>
+          </div>
+          <div class="workBox" data-cursor="-exclusion" data-cursor-video="/videos/1.mp4">
+            <a href="https://testv22.demowebsitelinks.com/alesch-html/" target="_blank">Luxury
+              Custom Builders</a>
+            <p>interaction & development</p>
+          </div>
+          <div class="workBox" data-cursor="-exclusion" data-cursor-video="/videos/2.mp4">
+            <a href="https://dynamic-international.netlify.app/" target="_blank">dynamic
+              international resources</a>
+            <p>(Work In Progress)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="lets_talksec" data-color="light">
+    <div class="container">
+      <p>Have a project in mind?</p>
+      <div data-cursor-img="images/arrow.svg">
+        <h2>LET’S TALK</h2>
+      </div>
+      <div class="email-details">
+        <a href="mailto:rohaidalikhan@gmail.com" data-cursor="-opaque" class="email-text" id="copy-text">
+          rohaidalikhan@gmail.com </a>
+        <a href="javascript:;" class="theme-btn" data-cursor-text="Copy" id="copy-btn">
+          <span class=" btn-bg"></span>
+          <span class="btn-text">
+            <span class="btn-text-inner">
+              <img src="images/copy.svg" alt="copy to clipboard">
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footerSec" data-cursor="-opaque">
+    <div class="container">
+      <div class="row">
+        <div class="flex-col">
+
+          <h5>Home Country <span>Pakistan</span></h5>
+          <h5>local time <span id="time"></span></h5>
+
+        </div>
+        <div class="flex-col">
+          <div>
+            <h5>Connect on socials:</h5>
+            <ul>
+              <li>
+                <a class="text-hover" href="https://twitter.com/RohaidAl" target="_blank">twitter</a>
+              </li>
+              <li>
+                <a class="text-hover" href="https://codepen.io/rohaidAli" target="_blank">codepen</a>
+              </li>
+              <li>
+                <a class="text-hover" href="https://www.linkedin.com/in/rohaid-khan-3a49a5149/"
+                  target="_blank">linkedin</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bg">
+      <!-- <svg viewBox="0 0 1920 852.828125" class="footer-bg-svg">
+        <path id="footer-bg-svg-curve" class="path-anim" fill="currentColor"
+          d="M 1920 63.96210937500001 Q 960 -63.96210937500001 0 63.96210937500001 L 0 852.828125 L 1920 852.828125 L 1920 127.92421875000002 Z"
+          data-path-to="M 1920 26.48031328124999 Q 960 -26.480313281250048 0 26.48031328124999 L 0 852.828125 L 1920 852.828125 L 1920 52.96062656250001 Z"
+          vector-effect="non-scaling-stroke">
+        </path>
+      </svg> -->
+      <svg class="separator separator--up" width="100%" height="100%" viewBox="0 0 100 10" preserveAspectRatio="none">
+        <path class="separator__path path-anim" d="M 0 0 C 40 0 60 0 100 0 L 0 0 Z"
+          data-path-to="M 0 0 C 40 10 60 10 100 0 L 0 0 Z" vector-effect="non-scaling-stroke" />
+      </svg>
+    </div>
+  </footer>
+  <script type="module" src="js/main.js" defer></script>
+</body>
+
+</html>
