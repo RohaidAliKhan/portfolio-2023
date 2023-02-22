@@ -10,8 +10,8 @@ export default function backgroundTransition() {
 
       let trigger = ScrollTrigger.create({
         trigger: section,
-        start: 'top+=100 center',
-        end: '+=100%',
+        start: 'top center',
+        end: () => `+=${section.offsetHeight}px`,
         // markers: true,
         onToggle() {
           gsap.to('body', {

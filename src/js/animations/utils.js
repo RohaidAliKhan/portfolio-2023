@@ -59,3 +59,14 @@ export function copyToboard(button, textCopy) {
       })
   })
 }
+
+// Define a debounce function
+export const debounce = (func, delay) => {
+  let timeout
+  return (...args) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      func.apply(this, args)
+    }, delay)
+  }
+}
