@@ -1,4 +1,6 @@
 import Lenis from '@studio-freight/lenis'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 export default function smoothScroll() {
   const lenis = new Lenis({
     duration: 1.2,
@@ -7,17 +9,15 @@ export default function smoothScroll() {
     gestureDirection: 'vertical', // vertical, horizontal, both
     smooth: true,
     mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
+
     infinite: false,
   })
 
   function raf(time) {
     lenis.raf(time)
+    ScrollTrigger.update()
     requestAnimationFrame(raf)
   }
 
   requestAnimationFrame(raf)
 }
-
-

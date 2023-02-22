@@ -599,8 +599,8 @@ header {
 }
 
 @media (max-width: 1024.98px) {
-  .bannerSec {
-    height: 60vh;
+  .bannerSec .container {
+    margin: auto;
   }
 
   .scrollTo {
