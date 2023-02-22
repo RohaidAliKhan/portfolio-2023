@@ -50,6 +50,7 @@
 @media screen and (max-width: 1200px) {
     :root {
         --container-padding: 6vw;
+        --section-padding: max(3em, 10vh);
     }
 }
 
@@ -63,7 +64,7 @@
     :root {
 
         --container-padding: clamp(1.25em, 4vw, 2.5em);
-        --section-padding: max(2.5em, 12vh);
+        --section-padding: max(2.5em, 8vh);
     }
 }
 
@@ -257,7 +258,7 @@ p a {
 }
 
 .section-heading h3 {
-    font-size: 1.25rem;
+    font-size: min(0.875rem, 1.125rem);
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;

@@ -265,7 +265,7 @@ header {
 }
 
 .bannerSec h2 {
-  font-size: 3.25rem;
+  font-size: min(1.5rem, 2rem);
   color: #b4bacd;
   font-weight: 500;
   font-stretch: 110%;
@@ -274,7 +274,7 @@ header {
 
 .bannerSec h2 span {
   display: block;
-  font-size: 6.25rem;
+  font-size: clamp(1.5rem, 10vw, 6.25rem);
   font-weight: 700;
   font-stretch: 130%;
   margin-top: 10px;
@@ -282,7 +282,7 @@ header {
 }
 
 .bannerSec h3 {
-  font-size: 2rem;
+  font-size: min(1.5rem, 2rem);
   color: #b4bacd;
 }
 
@@ -428,9 +428,9 @@ header {
 }
 
 .aboutSec h2 {
-  font-size: 3.75rem;
+  font-size: clamp(1.5rem, 7vw, 3.75rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: max(1.5, 1.2);
   text-transform: uppercase;
   color: var(--light-color);
 }
@@ -447,7 +447,7 @@ header {
 }
 
 .workSec .workBox a {
-  font-size: 4.125rem;
+  font-size: clamp(1.75rem, 5vw, 4em);
   font-weight: 700;
   text-transform: capitalize;
   color: currentColor;
@@ -457,24 +457,25 @@ header {
   text-transform: uppercase;
   font-weight: 300;
   color: var(--accent-color);
+  font-size: min(0.75rem, 1rem);
 }
 
 /* Selected Section Ends */
 
 
 .lets_talksec {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .lets_talksec h2 {
   color: var(--dark-color);
-  font-size: clamp(4.66em, 13vw, 15.32em);
+  font-size: clamp(3.125em, 13vw, 15.32em);
   font-weight: 900;
   font-variation-settings: "ital" 0, "wdth" 125;
 }
 
 .lets_talksec .theme-btn {
-  font-size: 1.75rem;
+  font-size: max(1.125rem, 1.75rem);
   padding: 0.5em;
 }
 
@@ -483,7 +484,7 @@ header {
 }
 
 .lets_talksec .email-details {
-  margin-top: 8rem;
+  margin-top: min(4em, 8em);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -491,7 +492,7 @@ header {
 }
 
 .lets_talksec .email-text {
-  font-size: 3rem;
+  font-size: clamp(1.125rem, 5vw, 3rem);
   font-weight: 700;
   font-stretch: 120%;
   color: var(--dark-color);
@@ -530,7 +531,7 @@ header {
 .footerSec h5 span {
   color: var(--light-color);
   display: block;
-  font-size: 1rem;
+  font-size: min(0.875rem, 1rem);
   padding-top: 1em;
 
 }
@@ -548,7 +549,7 @@ header {
 }
 
 .footerSec ul li a {
-  font-size: 1.125rem;
+  font-size: min(0.875rem, 1.125rem);
   color: var(--text-color-light);
   text-transform: capitalize;
 }
@@ -571,3 +572,61 @@ header {
   transform-origin: center;
   fill: #fff;
 }
+
+
+@media (max-width: 1600px) {}
+
+@media (max-width: 1445px) {}
+
+@media (max-width: 1366px) {}
+
+@media (max-width: 1199.98px) {
+  .bannerSec {
+    height: 60vh;
+  }
+
+  .scrollTo {
+    writing-mode: unset;
+    top: auto;
+    bottom: 20%;
+    transform: translateX(-50%);
+    align-items: center;
+    left: 50%;
+  }
+
+  .scrollTo>span {
+    display: none;
+  }
+
+  .scroll-across {
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 767.98px) {}
+
+@media (max-width: 575.98px) {
+  .theme-btn {
+    font-size: 0.75rem;
+  }
+
+  .scrollTo {
+    display: none;
+  }
+
+  .lets_talksec .email-details {
+    gap: 0 1rem;
+  }
+
+  .footerSec .flex-col {
+    margin-top: 2rem;
+  }
+
+  .footerSec .flex-col+.flex-col {
+    order: 1;
+  }
+}
+
+@media (max-width: 320.98px) {}
