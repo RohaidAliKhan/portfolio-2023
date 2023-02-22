@@ -12,6 +12,7 @@ export default function backgroundTransition() {
         trigger: section,
         start: 'top center',
         end: () => `+=${section.offsetHeight}px`,
+        invalidateOnRefresh: true,
         // markers: true,
         onToggle() {
           gsap.to('body', {
