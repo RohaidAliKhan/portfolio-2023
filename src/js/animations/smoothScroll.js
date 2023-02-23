@@ -9,7 +9,8 @@ export default function smoothScroll() {
     gestureDirection: 'vertical', // vertical, horizontal, both
     smooth: true,
     mouseMultiplier: 1,
-
+    smoothTouch: true,
+    touchMultiplier: 1,
     infinite: false,
   })
 
