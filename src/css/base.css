@@ -37,7 +37,7 @@
     line-height: 1.5;
     font-weight: 400;
 
-    color-scheme: light dark;
+    color-scheme: dark light;
 
 
     font-synthesis: none;
@@ -96,7 +96,7 @@ body {
     height: auto;
     -webkit-font-smoothing: antialiased;
     position: relative;
-    background-color: var(--color-dark);
+    background-color: var(--dark-color);
 }
 
 body {
