@@ -12,8 +12,8 @@ export default function backgroundTransition() {
         trigger: section,
         start: 'top center',
         end: () => `+=${section.offsetHeight}px`,
-        invalidateOnRefresh: true,
-        markers: true,
+        // invalidateOnRefresh: true,
+        // markers: true,
         onToggle() {
           gsap.to('body', {
             backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
