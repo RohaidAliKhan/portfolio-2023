@@ -26,7 +26,7 @@ export default function backgroundTransition() {
         if (trigger.isActive) {
           gsap.killTweensOf('body')
           gsap.set('body', {
-            backgroundColor: '',
+            backgroundColor: colorAttr,
           })
         }
       }
