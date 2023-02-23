@@ -22,11 +22,11 @@ export default function backgroundTransition() {
         },
       })
 
-      return () => {
-        if (trigger.isActive) {
-          gsap.killTweensOf('body')
-        }
-      }
+      // return () => {
+      //   if (trigger.isActive) {
+      //     gsap.killTweensOf('body')
+      //   }
+      // }
     }
   })
 }
