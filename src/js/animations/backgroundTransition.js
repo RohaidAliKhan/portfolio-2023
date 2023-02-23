@@ -13,7 +13,7 @@ export default function backgroundTransition() {
         start: 'top center',
         end: () => `+=${section.offsetHeight}px`,
         invalidateOnRefresh: true,
-        // markers: true,
+        markers: true,
         onToggle() {
           gsap.to('body', {
             backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
