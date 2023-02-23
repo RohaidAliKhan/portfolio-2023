@@ -12,8 +12,8 @@ export default function backgroundTransition() {
         trigger: section,
         start: 'top center',
         end: '+=100%',
-        // invalidateOnRefresh: true,
-        markers: true,
+        invalidateOnRefresh: true,
+        // markers: true,
         onToggle() {
           gsap.to('body', {
             backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
@@ -23,11 +23,10 @@ export default function backgroundTransition() {
       })
 
       return () => {
-        color = section.getAttribute('data-color')
         if (trigger.isActive) {
           gsap.killTweensOf('body')
           gsap.set('body', {
-            backgroundColor: color,
+            backgroundColor: '',
           })
         }
       }
