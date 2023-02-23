@@ -4,6 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 let sections = gsap.utils.toArray('section')
 
 export default function backgroundTransition() {
+  ScrollTrigger.getAll().forEach((t) => {
+    t.scroll(0)
+    t.kill(true)
+  })
+
   sections.forEach((section, i) => {
     if (section.getAttribute('data-color') !== null) {
       let colorAttr = section.getAttribute('data-color')
@@ -14,6 +19,7 @@ export default function backgroundTransition() {
         end: '+=100%',
         invalidateOnRefresh: true,
         // markers: true,
+        fastScrollEnd: '3000px',
         onToggle() {
           gsap.to('body', {
             backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
@@ -25,9 +31,9 @@ export default function backgroundTransition() {
       return () => {
         if (trigger.isActive) {
           gsap.killTweensOf('body')
-          gsap.set('body', {
-            backgroundColor: colorAttr,
-          })
+          // gsap.set('body', {
+          //   backgroundColor: colorAttr,
+          // })
         }
       }
     }
