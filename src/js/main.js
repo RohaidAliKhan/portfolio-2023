@@ -10,7 +10,7 @@ const copyButton = document.querySelector('#copy-btn'),
 
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger)
-  
+  window.addEventListener('resize', ScrollTrigger.refresh())
 
   MouseFollower.registerGSAP(gsap)
   new MouseFollower({
