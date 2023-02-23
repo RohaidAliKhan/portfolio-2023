@@ -18,7 +18,7 @@ export default function backgroundTransition() {
         start: 'top center',
         end: '+=100%',
         invalidateOnRefresh: true,
-        // markers: true,
+        markers: true,
         fastScrollEnd: '3000px',
         onToggle() {
           gsap.to('body', {
