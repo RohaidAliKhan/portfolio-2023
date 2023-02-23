@@ -11,9 +11,9 @@ export default function backgroundTransition() {
       let trigger = ScrollTrigger.create({
         trigger: section,
         start: 'top center',
-        end: () => `+=${section.offsetHeight}px`,
+        end: '+=100%',
         // invalidateOnRefresh: true,
-        // markers: true,
+        markers: true,
         onToggle() {
           gsap.to('body', {
             backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
