@@ -1,8 +1,22 @@
 import MouseFollower from 'mouse-follower'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { lineMask, preloader, textHover, magneticButton, explodingText, honrizontalScroll, backgroundTransition, backgroundCurve } from './animations'
-import { updateTime, copyToboard, smoothScroll, mobileViewport } from './animations/utils.js'
+import {
+  lineMask,
+  preloader,
+  textHover,
+  magneticButton,
+  explodingText,
+  honrizontalScroll,
+  backgroundTransition,
+  backgroundCurve,
+} from './animations'
+import {
+  updateTime,
+  copyToboard,
+  smoothScroll,
+  mobileViewport,
+} from './animations/utils.js'
 
 const copyButton = document.querySelector('#copy-btn'),
   textToCopy = document.querySelector('#copy-text'),
@@ -10,13 +24,15 @@ const copyButton = document.querySelector('#copy-btn'),
 
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger)
+  MouseFollower.registerGSAP(gsap)
   mobileViewport()
 
-  MouseFollower.registerGSAP(gsap)
-  new MouseFollower({
-    container: document.body,
-    speed: 0.3,
-  })
+  if (window.innerWidth > 540) {
+    new MouseFollower({
+      container: document.body,
+      speed: 0.3,
+    })
+  }
   preloader()
   smoothScroll()
   textHover()

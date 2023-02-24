@@ -13,7 +13,7 @@ export default function backgroundTransition() {
         start: 'top center',
         end: () => `+=${section.offsetHeight}px`,
         invalidateOnRefresh: true,
-        markers: true,
+        // markers: true,
         onToggle() {
           gsap.to('body', {
             backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
@@ -22,11 +22,13 @@ export default function backgroundTransition() {
         },
       })
 
-      // return () => {
-      //   if (trigger.isActive) {
-      //     gsap.killTweensOf('body')
-      //   }
-      // }
+      return () => {
+        let color = section.getAttribute('data-color')
+        if (trigger.isActive) {
+          gsap.killTweensOf('body')
+        }
+        gsap.set('body',{ backgroundColor: color})
+      }
     }
   })
 }
