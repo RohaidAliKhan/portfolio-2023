@@ -232,16 +232,6 @@ p {
     margin-bottom: 1em;
 }
 
-p.small {
-    font-size: .8em;
-    line-height: 1.75;
-    letter-spacing: .015em;
-}
-
-p.big {
-    font-size: 1.2em;
-}
-
 strong {
     font-weight: 800;
 }
@@ -281,13 +271,13 @@ section {
     position: relative;
 }
 
-.section.full-height {
+.full-height {
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
-.section.no-padding {
+.no-padding {
     padding-top: unset;
     padding-bottom: unset;
 }
@@ -385,7 +375,7 @@ video.overlay {
 }
 
 @media screen and (max-width: 540px) {
-    .section.full-height {
+    .full-height {
         min-height: 100vh;
         min-height: calc(var(--vh, 1vh) * 100);
         max-height: 100vh;

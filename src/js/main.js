@@ -24,8 +24,9 @@ const copyButton = document.querySelector('#copy-btn'),
 
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger)
+  ScrollTrigger.normalizeScroll(true);
   MouseFollower.registerGSAP(gsap)
-  mobileViewport()
+  // mobileViewport()
 
   if (window.innerWidth > 540) {
     new MouseFollower({

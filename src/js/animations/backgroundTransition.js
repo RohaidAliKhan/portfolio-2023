@@ -21,7 +21,7 @@ export default function backgroundTransition() {
           })
         },
       })
-
+      
       return () => {
         let color = section.getAttribute('data-color')
         if (trigger.isActive) {
