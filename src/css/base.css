@@ -11,16 +11,16 @@
 
 /* ------------------------- Custom Properties -------------------------------------------------- */
 :root {
-    --purple-gradient: linear-gradient(180deg, #ffb6ff, #b344ff);
+    --purple-gradient: linear-gradient(180deg, #ffde68, #a1ff62);
     --yellow-gradient: linear-gradient(to bottom, #ffe993, #eb831c);
     --btn-gradient: linear-gradient(180deg, #b4bacd 0%, #5b6a98 100%);
-    --primary-color: #ffb6ff;
-    --secondary-color: #b344ff;
+    --primary-color: #ffde68;
+    --secondary-color: #a1ff62;
     --accent-color: #b4bacd;
-    --dark-color: #14151c;
+    --dark-color: #201d1d;
     --light-color: #ffffff;
 
-    --text-color: #14151c;
+    --text-color: #201d1d;
     --text-color-light: #ffffff;
 
     --animation-primary: all .5s cubic-bezier(.7, 0, .3, 1);
@@ -396,7 +396,7 @@ video.overlay {
 .theme-btn {
     font-size: 1rem;
     text-transform: uppercase;
-    color: var(--light-color);
+    color: var(--dark-color);
     padding: 1em 3em;
     border-radius: 100px;
     display: inline-flex;

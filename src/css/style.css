@@ -49,7 +49,7 @@
 .preloader .inner small {
   width: 100%;
   display: block;
-  color: #fff;
+  color: black;
   font-size: 18px;
   text-align: center;
   margin-top: 15px;
@@ -434,7 +434,7 @@ header {
 }
 
 .aboutSec h2 {
-  font-size: clamp(1.5rem, 7vw, 3.75rem);
+  font-size: clamp(1.5rem, 7vw, 2.8rem);
   font-weight: 700;
   line-height: max(1.5, 1.2);
   text-transform: uppercase;
@@ -468,6 +468,11 @@ header {
   font-weight: 300;
   color: var(--accent-color);
   font-size: min(0.75rem, 1rem);
+}
+
+.workSec .workBox .workContent {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Selected Section Ends */
@@ -609,6 +614,9 @@ header {
 }
 
 @media (max-width: 767.98px) {
+  .workSec .workBox .workContent {
+    flex-direction: column;
+}
 }
 
 @media (max-width: 575.98px) {

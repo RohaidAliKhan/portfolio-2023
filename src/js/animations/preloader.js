@@ -1,6 +1,6 @@
 let settings = {
   progressSize: 320,
-  progressColor: '#fff',
+  progressColor: '#000',
   lineWidth: 2,
   lineCap: 'round',
   preloaderAnimationDuration: 800,
