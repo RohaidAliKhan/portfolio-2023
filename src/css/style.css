@@ -445,11 +445,11 @@ header {
 
 /* Selected Section Starts */
 .workSec .workBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3rem 0;
-  border-top: 2px solid rgb(183 80 255 / 20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 0;
+    border-top: 2px solid rgb(161 255 98 / 12%);
 }
 
 .workSec .workBox:last-of-type {
@@ -506,6 +506,10 @@ header {
   font-weight: 700;
   font-stretch: 120%;
   color: var(--dark-color);
+}
+
+.lets_talksec .email-details span.btn-text img {
+    filter: brightness(0);
 }
 
 .footerSec {
