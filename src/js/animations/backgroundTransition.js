@@ -1,34 +1,75 @@
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// import { gsap } from 'gsap'
+// import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-let sections = gsap.utils.toArray('section')
+// let sections = gsap.utils.toArray('section')
+
+// export default function backgroundTransition() {
+//   sections.forEach((section, i) => {
+//     if (section.getAttribute('data-color') !== null) {
+//       let colorAttr = section.getAttribute('data-color')
+
+//       let trigger = ScrollTrigger.create({
+//         trigger: section,
+//         start: 'top center',
+//         end: () => `+=${section.offsetHeight}px`,
+//         invalidateOnRefresh: true,
+//         // markers: true,
+//         onToggle() {
+//           gsap.to('body', {
+//             backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
+//             color: colorAttr === 'dark' ? gsap.getProperty('html', '--light-color') : gsap.getProperty('html', '--dark-color'),
+//           })
+//         },
+//       })
+
+//       return () => {
+//         let color = section.getAttribute('data-color')
+//         if (trigger.isActive) {
+//           gsap.killTweensOf('body')
+//         }
+//         gsap.set('body',{ backgroundColor: color})
+//       }
+//     }
+//   })
+// }
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function backgroundTransition() {
-  sections.forEach((section, i) => {
-    if (section.getAttribute('data-color') !== null) {
-      let colorAttr = section.getAttribute('data-color')
+  const sections = gsap.utils.toArray("section");
 
-      let trigger = ScrollTrigger.create({
-        trigger: section,
-        start: 'top center',
-        end: () => `+=${section.offsetHeight}px`,
-        invalidateOnRefresh: true,
-        // markers: true,
-        onToggle() {
-          gsap.to('body', {
-            backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
-            color: colorAttr === 'dark' ? gsap.getProperty('html', '--light-color') : gsap.getProperty('html', '--dark-color'),
-          })
-        },
-      })
-      
-      return () => {
-        let color = section.getAttribute('data-color')
-        if (trigger.isActive) {
-          gsap.killTweensOf('body')
-        }
-        gsap.set('body',{ backgroundColor: color})
-      }
-    }
-  })
+  sections.forEach((section) => {
+    const colorAttr = section.getAttribute("data-color");
+    if (!colorAttr) return;
+
+    const bgColor = colorAttr === "dark" ? getComputedStyle(document.documentElement).getPropertyValue("--dark-color") : getComputedStyle(document.documentElement).getPropertyValue("--light-color");
+
+    const textColor = colorAttr === "dark" ? getComputedStyle(document.documentElement).getPropertyValue("--light-color") : getComputedStyle(document.documentElement).getPropertyValue("--dark-color");
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top center",
+      end: "bottom center",
+      markers: true,
+      onEnter: () => {
+        gsap.to("body", {
+          backgroundColor: bgColor,
+          color: textColor,
+          duration: 0.6,
+          overwrite: "auto",
+        });
+      },
+
+      onEnterBack: () => {
+        gsap.to("body", {
+          backgroundColor: bgColor,
+          color: textColor,
+          duration: 0.6,
+          overwrite: "auto",
+        });
+      },
+    });
+  });
 }
