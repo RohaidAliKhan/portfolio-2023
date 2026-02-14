@@ -26,9 +26,11 @@ export default function backgroundTransition() {
         gsap.to(":root", {
           "--bg-color": bgColor,
           "--text-color": textColor,
-          duration: 0.6,
           ease: "power2.out",
           overwrite: "auto",
+        });
+        gsap.to(".workSec .workBox p", {
+          color: colorAttr === "light" ? "var(--dark-color)" : "var(--accent-text-color)",
         });
       },
 
@@ -36,9 +38,11 @@ export default function backgroundTransition() {
         gsap.to(":root", {
           "--bg-color": bgColor,
           "--text-color": textColor,
-          duration: 0.6,
           ease: "power2.out",
           overwrite: "auto",
+        });
+        gsap.to(".workSec .workBox p", {
+          color: colorAttr === "light" ? "var(--dark-color)" : "var(--accent-text-color)",
         });
       },
     });

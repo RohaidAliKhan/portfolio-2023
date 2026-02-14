@@ -337,7 +337,7 @@ header {
   top: 50%;
   left: 5vh;
   transform: translateY(-50%);
-  color: var(--accent-color);
+  color: var(--accent-text-color);
   letter-spacing: 2px;
   display: flex;
   gap: 1rem;
@@ -455,13 +455,22 @@ header {
 .workSec .workBox p {
   text-transform: uppercase;
   font-weight: 300;
-  color: var(--accent-color);
+  color: var(--accent-text-color);
   font-size: min(0.75rem, 1rem);
+  margin: 0;
 }
 
 .workSec .workBox .workContent {
   display: flex;
   justify-content: space-between;
+}
+.workBox .workContent a {
+  font-size: min(0.75rem, 1rem);
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-weight: 300;
+  display: block;
+  margin-top: 1.25rem;
 }
 
 /* Selected Section Ends */
@@ -525,7 +534,7 @@ header {
 }
 
 .footerSec h5 {
-  color: var(--accent-color);
+  color: var(--accent-text-color);
   font-weight: 500;
 }
 
@@ -640,6 +649,9 @@ header {
 
   .xs-visible {
     display: block !important;
+  }
+  figure.xs-visible {
+    margin-bottom: 1rem;
   }
 }
 

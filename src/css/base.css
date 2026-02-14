@@ -25,6 +25,7 @@
 
   --bg-color: var(--dark-color);
   --text-color: var(--light-color);
+  --accent-text-color: var(--accent-color);
 
   --animation-primary: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
   --animation-fast: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
