@@ -1,86 +1,72 @@
-import Lenis from '@studio-freight/lenis'
+import Lenis from "lenis";
 
 // Initialize smooth scroll
 export function smoothScroll() {
   const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-    direction: 'vertical', // vertical, horizontal
-    gestureDirection: 'vertical', // vertical, horizontal, both
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 1,
-  })
-
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-
-  requestAnimationFrame(raf)
+    autoRaf: true,
+  });
 }
 
 // Get Local Time
 export function updateTime(timeSpan) {
   const optionsTime = {
-    timeZoneName: 'short',
-    hour: '2-digit',
-    hour12: 'true',
-    minute: 'numeric',
-  }
+    timeZoneName: "short",
+    hour: "2-digit",
+    hour12: "true",
+    minute: "numeric",
+  };
 
-  const formatter = new Intl.DateTimeFormat([], optionsTime)
-  update()
-  setInterval(update, 1000)
+  const formatter = new Intl.DateTimeFormat([], optionsTime);
+  update();
+  setInterval(update, 1000);
 
   function update() {
-    const dateTime = new Date()
-    const formattedDateTime = formatter.format(dateTime)
-    timeSpan.textContent = formattedDateTime
+    const dateTime = new Date();
+    const formattedDateTime = formatter.format(dateTime);
+    timeSpan.textContent = formattedDateTime;
   }
 }
 
 // Copy to Clipboard
 export function copyToboard(button, textCopy) {
-  button.addEventListener('click', (e) => {
-    e.preventDefault
-    const text = textCopy.innerText
+  button.addEventListener("click", (e) => {
+    e.preventDefault;
+    const text = textCopy.innerText;
 
     navigator.clipboard
       .writeText(text)
       .then(() => {
         // console.log(`Copied "${text}" to clipboard`)
-        document.querySelector('.mf-cursor-text').innerText = `Copied!`
+        document.querySelector(".mf-cursor-text").innerText = `Copied!`;
       })
       .catch((err) => {
         // console.error(`Error copying text: ${err}`)
-      })
-  })
+      });
+  });
 }
 
 // Mobile Viewport Size
 export function mobileViewport() {
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-  let vh = window.innerHeight * 0.01
+  let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document
-  document.documentElement.style.setProperty('--vh', `${vh}px`)
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
 
   // We listen to the resize event
-  // window.addEventListener('resize', () => {
-  //   // We execute the same script as before
-  //   let vh = window.innerHeight * 0.01
-  //   document.documentElement.style.setProperty('--vh', `${vh}px`)
-  // })
+  window.addEventListener("resize", () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
 }
 
 // Define a debounce function
 export const debounce = (func, delay) => {
-  let timeout
+  let timeout;
   return (...args) => {
-    clearTimeout(timeout)
+    clearTimeout(timeout);
     timeout = setTimeout(() => {
-      func.apply(this, args)
-    }, delay)
-  }
-}
+      func.apply(this, args);
+    }, delay);
+  };
+};

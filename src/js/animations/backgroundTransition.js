@@ -1,34 +1,46 @@
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-let sections = gsap.utils.toArray('section')
+gsap.registerPlugin(ScrollTrigger);
 
 export default function backgroundTransition() {
-  sections.forEach((section, i) => {
-    if (section.getAttribute('data-color') !== null) {
-      let colorAttr = section.getAttribute('data-color')
+  const sections = gsap.utils.toArray("section");
 
-      let trigger = ScrollTrigger.create({
-        trigger: section,
-        start: 'top center',
-        end: () => `+=${section.offsetHeight}px`,
-        invalidateOnRefresh: true,
-        // markers: true,
-        onToggle() {
-          gsap.to('body', {
-            backgroundColor: colorAttr === 'dark' ? gsap.getProperty('html', '--dark-color') : gsap.getProperty('html', '--light-color'),
-            color: colorAttr === 'dark' ? gsap.getProperty('html', '--light-color') : gsap.getProperty('html', '--dark-color'),
-          })
-        },
-      })
-      
-      return () => {
-        let color = section.getAttribute('data-color')
-        if (trigger.isActive) {
-          gsap.killTweensOf('body')
-        }
-        gsap.set('body',{ backgroundColor: color})
-      }
-    }
-  })
+  sections.forEach((section) => {
+    const colorAttr = section.getAttribute("data-color");
+    if (!colorAttr) return;
+
+    const rootStyles = getComputedStyle(document.documentElement);
+
+    const bgColor = colorAttr === "dark" ? rootStyles.getPropertyValue("--dark-color").trim() : rootStyles.getPropertyValue("--light-color").trim();
+
+    const textColor = colorAttr === "dark" ? rootStyles.getPropertyValue("--light-color").trim() : rootStyles.getPropertyValue("--dark-color").trim();
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top center",
+      end: "bottom center",
+      markers: false,
+
+      onEnter: () => {
+        gsap.to(":root", {
+          "--bg-color": bgColor,
+          "--text-color": textColor,
+          duration: 0.6,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+      },
+
+      onEnterBack: () => {
+        gsap.to(":root", {
+          "--bg-color": bgColor,
+          "--text-color": textColor,
+          duration: 0.6,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+      },
+    });
+  });
 }
