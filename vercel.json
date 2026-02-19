@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "rohaidalikhan.com" }],
+      "destination": "https://www.rohaidalikhan.com/:path*",
+      "permanent": true
+    }
+  ]
+}

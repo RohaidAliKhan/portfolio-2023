@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { lineMask, preloader, textHover, magneticButton, explodingText, honrizontalScroll, backgroundTransition, backgroundCurve } from "./animations";
+import { lineMask, preloader, textHover, magneticButton, hoverCards, explodingText, honrizontalScroll, backgroundTransition, backgroundCurve } from "./animations";
 import { updateTime, copyToboard, smoothScroll, mobileViewport } from "./animations/utils.js";
 
 const copyButton = document.querySelector("#copy-btn"),
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   lineMask();
   // explodingText()
   backgroundTransition();
+  hoverCards();
   copyToboard(copyButton, textToCopy);
   backgroundCurve();
   updateTime(timeSpan);
