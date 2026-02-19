@@ -74,25 +74,25 @@
 
 /* BEFORE PAGE LOADED */
 header {
-  transform: translateY(-100%);
-  transition-duration: 0.7s;
+  /* transform: translateY(-100%); */
+  /* transition-duration: 0.7s;
   -webkit-transition-duration: 0.7s;
   transition-timing-function: cubic-bezier(0.86, 0, 0.09, 1);
   -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.09, 1);
-  transition-delay: 0.2s;
+  transition-delay: 0.2s; */
   padding: 1rem 0;
-  will-change: transform;
+  /* will-change: transform; */
 }
 
 .bannerSec {
-  transform: translateY(-100%);
+  /* transform: translateY(-100%);
   transition-duration: 0.7s;
   -webkit-transition-duration: 0.7s;
   transition-timing-function: cubic-bezier(0.86, 0, 0.09, 1);
   -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.09, 1);
   transition-delay: 0.125s;
   opacity: 0;
-  will-change: transform;
+  will-change: transform; */
 }
 
 /* PAGE LOADED */
@@ -222,7 +222,7 @@ header {
 
 .navbar .navbar-nav .nav-item a {
   color: var(--light-color);
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-size: 1rem;
 }
 
@@ -260,7 +260,7 @@ header {
   overflow: hidden;
 }
 
-.bannerSec h2 {
+.bannerSec .heading-h2 {
   font-size: min(1.5rem, 2rem);
   color: #b4bacd;
   font-weight: 500;
@@ -268,7 +268,7 @@ header {
   margin: 0 0 1rem;
 }
 
-.bannerSec h2 span {
+.bannerSec .heading-h2 span {
   display: block;
   font-size: clamp(1.5rem, 10vw, 6.25rem);
   font-weight: 700;
@@ -277,12 +277,12 @@ header {
   color: var(--text-color-light);
 }
 
-.bannerSec h3 {
+.bannerSec .heading-h3 {
   font-size: min(1.5rem, 2rem);
   color: #b4bacd;
 }
 
-.bannerSec h3 span {
+.bannerSec .heading-h3 span {
   position: relative;
   display: inline-block;
 }
@@ -302,7 +302,7 @@ header {
   pointer-events: none;
 }
 
-.scroll-across h1 {
+.scroll-across .heading-h1 {
   position: relative;
   display: flex;
   align-items: center;
@@ -322,7 +322,7 @@ header {
   opacity: 0.5;
 }
 
-.scroll-across h1 .gradient-2 {
+.scroll-across .heading-h1 .gradient-2 {
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;

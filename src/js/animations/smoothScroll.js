@@ -1,24 +1,32 @@
-import Lenis from 'lenis'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "lenis/dist/lenis.css";
 
 export default function smoothScroll() {
+  // Initialize Lenis
   const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-    direction: 'vertical', // vertical, horizontal
-    gestureDirection: 'vertical', // vertical, horizontal, both
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: true,
-    touchMultiplier: 1,
-    infinite: false,
-  })
+    autoRaf: true,
+  });
 
-  function raf(time) {
-    lenis.raf(time)
-    ScrollTrigger.update()
-    requestAnimationFrame(raf)
-  }
+  // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+  lenis.on("scroll", ScrollTrigger.update);
 
-  requestAnimationFrame(raf)
+  // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+  // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+  });
+
+  // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+  gsap.ticker.lagSmoothing(0);
+  console.log(document.querySelectorAll('a[href^="#"]').length);
+  // Smooth Scroll to target Section
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      console.log("clicked");
+      e.preventDefault();
+      lenis.scrollTo(this.getAttribute("href"));
+    });
+  });
 }
